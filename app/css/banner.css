@@ -29,10 +29,12 @@
 /* Slides empilhados na mesma célula; a altura é a do maior */
 .banner-slides {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .banner-layer {
   grid-area: 1 / 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
@@ -97,7 +99,7 @@
   font-family: var(--font-chakra-petch), sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 2.75rem;
+  font-size: clamp(1.75rem, 8.4vw, 2.75rem);
   line-height: 0.98;
   letter-spacing: 0.005em;
 }
@@ -362,21 +364,71 @@
   box-shadow: 0 0 10px var(--color-red);
 }
 
-/* Em telas pequenas o gráfico encolhe e as tags saem */
-@media (max-width: 639px) {
-  .banner-graphic {
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%) scale(0.6);
-    transform-origin: top center;
+/* Celular e tablet: a arte vira fundo do slide e o texto fica por cima */
+@media (max-width: 1023px) {
+  .banner-slides {
+    margin: 0 -1rem;
   }
 
+  .banner-layer {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    justify-content: center;
+    min-height: 560px;
+    padding: 3rem 1rem 2.5rem;
+  }
+
+  .banner-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .banner-visual {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: auto;
+    max-width: none;
+    height: auto;
+    margin: 0;
+  }
+
+  /* Foto de fundo, escurecida para o texto ficar legível */
+  .banner-photo {
+    clip-path: none;
+  }
+
+  .banner-photo-shade {
+    background: linear-gradient(
+      to bottom,
+      rgb(var(--bg-rgb) / 0.78) 0%,
+      rgb(var(--bg-rgb) / 0.88) 50%,
+      rgb(var(--bg-rgb) / 0.96) 100%
+    );
+  }
+
+  .banner-corner,
+  .banner-photo-caption,
   .banner-tag {
     display: none;
   }
 
-  .banner-visual {
-    height: 340px;
+  /* Gráfico (roda, selo, horário) vira marca d'água centralizada */
+  .banner-graphic {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.18;
+  }
+
+  .banner-big-main {
+    font-size: 5.25rem;
+  }
+
+  .banner-title,
+  .banner-text {
+    text-shadow: 0 1px 12px rgb(var(--bg-rgb) / 0.8);
   }
 }
 
