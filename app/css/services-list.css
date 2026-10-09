@@ -1,0 +1,227 @@
+/* Serviços - lista detalhada "Tudo para seu carro rodar seguro" */
+.svc-list {
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
+}
+
+.svc-list-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 64px 1rem;
+}
+
+@media (min-width: 1024px) {
+  .svc-list-inner {
+    padding: 104px 80px;
+  }
+}
+
+.svc-list-head {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .svc-list-head {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+  }
+}
+
+.svc-list-head-text {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.svc-list-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-red-deep);
+}
+
+.svc-list-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-red);
+  box-shadow: 0 0 12px var(--color-red);
+}
+
+.svc-list-title {
+  margin: 0;
+  max-width: 820px;
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1024px) {
+  .svc-list-title {
+    font-size: 3.375rem;
+  }
+}
+
+.svc-list-intro {
+  margin: 0;
+  max-width: 420px;
+  font-family: var(--font-barlow), sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-text-dark-soft);
+}
+
+.svc-list-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .svc-list-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.svc-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  min-height: 250px;
+  box-sizing: border-box;
+  padding: 28px;
+  background: var(--color-white);
+  border: 1px solid rgb(var(--ink-rgb) / 0.09);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 18px) 0,
+    100% 18px,
+    100% 100%,
+    18px 100%,
+    0 calc(100% - 18px)
+  );
+}
+
+@media (min-width: 640px) {
+  .svc-card {
+    grid-template-columns: 104px minmax(0, 1fr);
+    padding: 40px;
+  }
+}
+
+.svc-card-line {
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 64px;
+  height: 2px;
+  background: var(--color-red);
+  box-shadow: 0 0 12px var(--color-red);
+}
+
+@media (min-width: 640px) {
+  .svc-card-line {
+    left: 40px;
+  }
+}
+
+.svc-card-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 104px;
+  height: 104px;
+  box-sizing: border-box;
+  border: 1px solid rgb(var(--red-rgb) / 0.5);
+  background: rgb(var(--red-rgb) / 0.08);
+  color: var(--color-red-deep);
+}
+
+.svc-card-corner {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 0 solid var(--color-red);
+}
+
+.svc-card-corner--tl {
+  top: -4px;
+  left: -4px;
+  border-width: 2px 0 0 2px;
+}
+
+.svc-card-corner--tr {
+  top: -4px;
+  right: -4px;
+  border-width: 2px 2px 0 0;
+}
+
+.svc-card-corner--bl {
+  bottom: -4px;
+  left: -4px;
+  border-width: 0 0 2px 2px;
+}
+
+.svc-card-corner--br {
+  bottom: -4px;
+  right: -4px;
+  border-width: 0 2px 2px 0;
+}
+
+.svc-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.svc-card-title {
+  margin: 0;
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 1.875rem;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.svc-card-text {
+  margin: 0;
+  font-family: var(--font-barlow), sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-text-dark-soft);
+}
+
+.svc-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-red-deep);
+  text-decoration: none;
+  transition: gap 0.15s ease;
+}
+
+.svc-card-link:hover {
+  gap: 12px;
+}

@@ -1,0 +1,268 @@
+/* Pneus - "Pneus em estoque" com filtro por tipo de veículo */
+.catalog {
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
+}
+
+.catalog-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 64px 1rem;
+}
+
+@media (min-width: 1024px) {
+  .catalog-inner {
+    padding: 104px 80px;
+  }
+}
+
+.catalog-head {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .catalog-head {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+  }
+}
+
+.catalog-head-text {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.catalog-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-red-deep);
+}
+
+.catalog-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-red);
+  box-shadow: 0 0 12px var(--color-red);
+}
+
+.catalog-title {
+  margin: 0;
+  max-width: 820px;
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1024px) {
+  .catalog-title {
+    font-size: 3.375rem;
+  }
+}
+
+.catalog-intro {
+  margin: 0;
+  max-width: 420px;
+  font-family: var(--font-barlow), sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-text-dark-soft);
+}
+
+/* Barra de filtros */
+.catalog-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 14px;
+  background: var(--color-white);
+  border: 1px solid rgb(var(--ink-rgb) / 0.09);
+}
+
+@media (min-width: 768px) {
+  .catalog-filters {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+}
+
+.catalog-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.catalog-chip {
+  height: 44px;
+  padding: 0 18px;
+  border: 1px solid rgb(var(--ink-rgb) / 0.2);
+  background: transparent;
+  color: var(--color-text-dark-body);
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.catalog-chip:hover {
+  border-color: var(--color-red);
+}
+
+.catalog-chip--on {
+  border-color: var(--color-red);
+  background: var(--color-red);
+  color: var(--color-white);
+  box-shadow: 0 0 16px rgb(var(--red-rgb) / 0.45);
+}
+
+.catalog-count {
+  padding-right: 10px;
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.06em;
+  color: var(--color-text-dark-dim);
+}
+
+/* Grade de pneus */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.tire-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: 1px solid rgb(var(--ink-rgb) / 0.09);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 18px) 0,
+    100% 18px,
+    100% 100%,
+    18px 100%,
+    0 calc(100% - 18px)
+  );
+}
+
+.tire-card-media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 210px;
+  background-color: var(--color-tile);
+  border-bottom: 1px solid rgb(var(--ink-rgb) / 0.08);
+}
+
+.tire-card-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 4px 10px;
+  border: 1px solid rgb(var(--red-rgb) / 0.6);
+  background: rgb(var(--red-rgb) / 0.12);
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tire-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 12px;
+  padding: 22px;
+}
+
+.tire-card-size {
+  margin: 0;
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.tire-card-use {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-top: 1px dashed rgb(var(--ink-rgb) / 0.12);
+  border-bottom: 1px dashed rgb(var(--ink-rgb) / 0.12);
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--color-text-dark-soft);
+}
+
+.tire-card-use-value {
+  text-align: right;
+  color: var(--color-text-dark);
+}
+
+.tire-card-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  margin-top: auto;
+  padding: 0 16px;
+  background: var(--color-red);
+  color: var(--color-white);
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
+}
+
+.tire-card-btn:hover {
+  background: var(--color-red-dark);
+}

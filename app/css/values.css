@@ -1,0 +1,129 @@
+/* Quem somos - "O que nos move" */
+.values {
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
+}
+
+.values-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 64px 1rem;
+}
+
+@media (min-width: 1024px) {
+  .values-inner {
+    padding: 104px 80px;
+  }
+}
+
+.values-head {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.values-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-red-deep);
+}
+
+.values-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-red);
+  box-shadow: 0 0 12px var(--color-red);
+}
+
+.values-title {
+  margin: 0;
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1024px) {
+  .values-title {
+    font-size: 3.375rem;
+  }
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .values-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.values-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px;
+  background: var(--color-white);
+  border: 1px solid rgb(var(--ink-rgb) / 0.09);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 18px) 0,
+    100% 18px,
+    100% 100%,
+    18px 100%,
+    0 calc(100% - 18px)
+  );
+}
+
+.values-card-line {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  width: 64px;
+  height: 2px;
+  background: var(--color-red);
+  box-shadow: 0 0 12px var(--color-red);
+}
+
+.values-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  box-sizing: border-box;
+  border: 1px solid rgb(var(--red-rgb) / 0.5);
+  background: rgb(var(--red-rgb) / 0.08);
+  color: var(--color-red-deep);
+}
+
+.values-card-title {
+  margin: 0;
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 1.625rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.values-card-text {
+  margin: 0;
+  font-family: var(--font-barlow), sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-text-dark-soft);
+}

@@ -1,0 +1,147 @@
+/* Serviços - "Como funciona" */
+.process {
+  background-color: var(--color-bg-deep);
+  border-top: 1px solid rgb(var(--white-rgb) / 0.08);
+  color: var(--color-white);
+}
+
+.process.grid-bg {
+  background-image:
+    linear-gradient(rgb(var(--white-rgb) / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--white-rgb) / 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.process-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 64px 1rem;
+}
+
+@media (min-width: 1024px) {
+  .process-inner {
+    padding: 104px 80px;
+  }
+}
+
+.process-head {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.process-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-red-light);
+}
+
+.process-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-red);
+  box-shadow: 0 0 12px var(--color-red);
+}
+
+.process-title {
+  margin: 0;
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1024px) {
+  .process-title {
+    font-size: 3.375rem;
+  }
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .process-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.process-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 40px;
+  background: var(--color-surface-2);
+  border: 1px solid rgb(var(--white-rgb) / 0.09);
+}
+
+.process-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 0 solid rgb(var(--white-rgb) / 0.35);
+}
+
+.process-corner--tl {
+  top: -1px;
+  left: -1px;
+  border-width: 2px 0 0 2px;
+}
+
+.process-corner--tr {
+  top: -1px;
+  right: -1px;
+  border-width: 2px 2px 0 0;
+}
+
+.process-corner--bl {
+  bottom: -1px;
+  left: -1px;
+  border-width: 0 0 2px 2px;
+}
+
+.process-corner--br {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 2px 2px 0;
+}
+
+.process-number {
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-red);
+}
+
+.process-card-title {
+  margin: 0;
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 1.625rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.process-card-text {
+  margin: 0;
+  font-family: var(--font-barlow), sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-text-caption);
+}

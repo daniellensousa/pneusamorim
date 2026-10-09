@@ -1,0 +1,242 @@
+/* Topo das páginas internas (breadcrumb, título e foto) */
+.page-hero {
+  background-color: var(--color-bg);
+  border-bottom: 1px solid rgb(var(--white-rgb) / 0.08);
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+.page-hero.grid-bg {
+  background-image:
+    linear-gradient(rgb(var(--white-rgb) / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--white-rgb) / 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.page-hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 3rem 1rem;
+}
+
+@media (min-width: 1024px) {
+  .page-hero-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 420px;
+    box-sizing: border-box;
+    padding: 0 80px;
+  }
+}
+
+.page-hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 20px;
+  max-width: 760px;
+}
+
+@media (min-width: 1024px) {
+  .page-hero-text {
+    align-self: flex-end;
+    padding-bottom: 72px;
+  }
+}
+
+.page-hero-crumbs {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-caption);
+}
+
+.page-hero-crumbs a {
+  color: var(--color-text-caption);
+  text-decoration: none;
+}
+
+.page-hero-crumbs a:hover {
+  color: var(--color-white);
+}
+
+.page-hero-current {
+  color: var(--color-red-light);
+}
+
+.page-hero-title {
+  margin: 0;
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .page-hero-title {
+    font-size: 5.5rem;
+  }
+}
+
+.page-hero-highlight {
+  color: var(--color-red);
+}
+
+.page-hero-subtitle {
+  margin: 0;
+  font-family: var(--font-barlow), sans-serif;
+  font-size: 1.3125rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+/* Foto com marcadores nos cantos (560x308 no desktop) */
+.page-hero-visual {
+  position: relative;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.page-hero-visual--photo {
+  max-width: 560px;
+  aspect-ratio: 560 / 308;
+}
+
+/* Roda com anéis (360x360 no desktop) */
+.page-hero-visual--wheel {
+  max-width: 360px;
+  aspect-ratio: 1;
+  align-self: center;
+}
+
+@media (min-width: 1024px) {
+  .page-hero-visual--wheel {
+    margin-right: 40px;
+  }
+}
+
+.page-hero-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 50%;
+}
+
+.page-hero-spin {
+  animation: page-hero-spin 32s linear infinite;
+}
+
+.page-hero-spin-rev {
+  animation: page-hero-spin 48s linear infinite reverse;
+}
+
+.page-hero-wheel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-hero-wheel svg {
+  width: 58%;
+  height: auto;
+}
+
+@keyframes page-hero-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.page-hero-photo {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 18px) 0,
+    100% 18px,
+    100% 100%,
+    18px 100%,
+    0 calc(100% - 18px)
+  );
+}
+
+.page-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-hero-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 70px;
+  background: linear-gradient(
+    180deg,
+    rgb(var(--red-rgb) / 0) 0%,
+    rgb(var(--red-rgb) / 0.25) 85%,
+    rgb(var(--red-light-rgb) / 0.8) 100%
+  );
+  animation: page-hero-scan 9s linear infinite;
+}
+
+@keyframes page-hero-scan {
+  0% {
+    transform: translateY(-120px);
+  }
+  100% {
+    transform: translateY(760px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hero-scan,
+  .page-hero-spin,
+  .page-hero-spin-rev {
+    animation: none;
+  }
+}
+
+.page-hero-corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 0 solid var(--color-red);
+}
+
+.page-hero-corner--tl {
+  top: -8px;
+  left: -8px;
+  border-width: 2px 0 0 2px;
+}
+
+.page-hero-corner--tr {
+  top: -8px;
+  right: -8px;
+  border-width: 2px 2px 0 0;
+}
+
+.page-hero-corner--bl {
+  bottom: -8px;
+  left: -8px;
+  border-width: 0 0 2px 2px;
+}
+
+.page-hero-corner--br {
+  bottom: -8px;
+  right: -8px;
+  border-width: 0 2px 2px 0;
+}

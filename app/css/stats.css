@@ -1,0 +1,82 @@
+/* Faixa vermelha com números da loja */
+.stats {
+  background: var(--color-red);
+  color: var(--color-white);
+  border-top: 1px solid rgb(var(--white-rgb) / 0.3);
+  border-bottom: 1px solid rgb(var(--white-rgb) / 0.3);
+}
+
+.stats-inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+@media (min-width: 1024px) {
+  .stats-inner {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    height: 150px;
+  }
+}
+
+.stats-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 1.5rem 1.25rem;
+  border-right: 1px solid rgb(var(--white-rgb) / 0.3);
+}
+
+.stats-item:nth-child(2n) {
+  border-right: 0;
+}
+
+.stats-item:nth-child(-n + 2) {
+  border-bottom: 1px solid rgb(var(--white-rgb) / 0.3);
+}
+
+@media (min-width: 1024px) {
+  .stats-item {
+    padding: 0 40px;
+    border-bottom: 0 !important;
+    border-right: 1px solid rgb(var(--white-rgb) / 0.3) !important;
+  }
+
+  .stats-item:first-child {
+    padding-left: 80px;
+  }
+
+  .stats-item:last-child {
+    padding-right: 80px;
+    border-right: 0 !important;
+  }
+}
+
+.stats-label {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.2em;
+  color: var(--color-red-tint);
+}
+
+.stats-value {
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1024px) {
+  .stats-value {
+    font-size: 2.75rem;
+  }
+}
+
+.stats-unit {
+  font-size: 1.25rem;
+  color: var(--color-red-tint);
+}
