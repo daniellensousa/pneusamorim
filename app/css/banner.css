@@ -1,0 +1,498 @@
+/* Banner - slides com abas (tradição, serviços, pneus, horário) */
+.banner {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-bg);
+  color: var(--color-white);
+  font-family: var(--font-barlow), sans-serif;
+}
+
+.banner.grid-bg {
+  background-image:
+    linear-gradient(rgb(var(--white-rgb) / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--white-rgb) / 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.banner-inner {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 0 1rem 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .banner-inner {
+    padding: 0 5rem 2.5rem;
+  }
+}
+
+/* Slides empilhados na mesma célula; a altura é a do maior */
+.banner-slides {
+  display: grid;
+}
+
+.banner-layer {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  padding: 2.5rem 0;
+  opacity: 0;
+  transform: translateX(24px);
+  transition: opacity 600ms ease, transform 600ms ease;
+  pointer-events: none;
+}
+
+.banner-layer--on {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+@media (min-width: 1024px) {
+  .banner-layer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 600px;
+    padding: 0;
+  }
+}
+
+/* Coluna de texto */
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.625rem;
+}
+
+@media (min-width: 1024px) {
+  .banner-content {
+    flex: 0 0 620px;
+    max-width: 620px;
+  }
+}
+
+.banner-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.875rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-red-light);
+}
+
+.banner-num {
+  padding: 5px 10px;
+  border: 1px solid rgb(var(--red-rgb) / 0.6);
+  background: rgb(var(--red-rgb) / 0.1);
+  color: var(--color-white);
+}
+
+.banner-title {
+  margin: 0;
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 2.75rem;
+  line-height: 0.98;
+  letter-spacing: 0.005em;
+}
+
+@media (min-width: 640px) {
+  .banner-title {
+    font-size: 4.75rem;
+  }
+}
+
+.banner-text {
+  margin: 0;
+  max-width: 540px;
+  font-size: 1.25rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  margin-top: 0.375rem;
+}
+
+.banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  height: 60px;
+  padding: 0 30px;
+  box-sizing: border-box;
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-white);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.banner-btn--primary {
+  background: var(--color-red);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
+}
+
+.banner-btn--primary:hover {
+  background: var(--color-red-dark);
+}
+
+.banner-btn--secondary {
+  border: 1px solid rgb(var(--white-rgb) / 0.35);
+  background: rgb(var(--white-rgb) / 0.03);
+}
+
+.banner-btn--secondary:hover {
+  border-color: var(--color-white);
+}
+
+.banner-phone {
+  font-size: 1.125rem;
+  color: var(--color-text);
+}
+
+.banner-phone a {
+  color: var(--color-white);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Coluna visual (620x500 no desktop) */
+.banner-visual {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .banner-visual {
+    flex: 0 0 620px;
+    margin: 0;
+  }
+}
+
+.banner-photo {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--color-surface-2);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 18px) 0,
+    100% 18px,
+    100% 100%,
+    18px 100%,
+    0 calc(100% - 18px)
+  );
+}
+
+.banner-photo-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.08) saturate(1.1);
+}
+
+.banner-photo-shade {
+  position: absolute;
+  inset: 0;
+  background: rgb(var(--bg-rgb) / 0.18);
+}
+
+.banner-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 90px;
+  background: linear-gradient(
+    180deg,
+    rgb(var(--red-rgb) / 0) 0%,
+    rgb(var(--red-rgb) / 0.22) 85%,
+    rgb(var(--red-light-rgb) / 0.8) 100%
+  );
+  animation: banner-scan 9s linear infinite;
+}
+
+.banner-corner {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border: 0 solid var(--color-red);
+}
+
+.banner-corner--tl {
+  top: -10px;
+  left: -10px;
+  border-width: 2px 0 0 2px;
+}
+
+.banner-corner--tr {
+  top: -10px;
+  right: -10px;
+  border-width: 2px 2px 0 0;
+}
+
+.banner-corner--bl {
+  bottom: -10px;
+  left: -10px;
+  border-width: 0 0 2px 2px;
+}
+
+.banner-corner--br {
+  bottom: -10px;
+  right: -10px;
+  border-width: 0 2px 2px 0;
+}
+
+.banner-photo-caption {
+  position: absolute;
+  left: 0;
+  bottom: -34px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-caption);
+}
+
+/* Gráfico com anéis (serviços, pneus, horário) */
+.banner-graphic {
+  position: absolute;
+  left: 50px;
+  top: -10px;
+  width: 520px;
+  height: 520px;
+}
+
+.banner-spin,
+.banner-spin-rev {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 50%;
+}
+
+.banner-spin {
+  animation: banner-spin 32s linear infinite;
+}
+
+.banner-spin-rev {
+  animation: banner-spin 48s linear infinite reverse;
+}
+
+.banner-graphic-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-seal {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+.banner-big {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.banner-big-top {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-red-light);
+}
+
+.banner-big-main {
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 120px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* Tags flutuantes */
+.banner-tag {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgb(var(--surface-2-rgb) / 0.92);
+  border: 1px solid rgb(var(--white-rgb) / 0.14);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.banner-tag-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-red);
+  box-shadow: 0 0 10px var(--color-red);
+}
+
+/* Em telas pequenas o gráfico encolhe e as tags saem */
+@media (max-width: 639px) {
+  .banner-graphic {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%) scale(0.6);
+    transform-origin: top center;
+  }
+
+  .banner-tag {
+    display: none;
+  }
+
+  .banner-visual {
+    height: 340px;
+  }
+}
+
+/* Abas e controles */
+.banner-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .banner-nav {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 1.5rem;
+  }
+}
+
+.banner-tabs {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .banner-tabs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.banner-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.banner-tab-label {
+  font-size: 0.9375rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+}
+
+.banner-tab--on .banner-tab-label {
+  color: var(--color-white);
+}
+
+.banner-tab-bar {
+  display: block;
+  height: 3px;
+  background: rgb(var(--white-rgb) / 0.18);
+  transition: background 300ms ease;
+}
+
+.banner-tab--on .banner-tab-bar {
+  background: var(--color-red);
+  box-shadow: 0 0 12px var(--color-red);
+}
+
+.banner-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.banner-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  box-sizing: border-box;
+  border: 1px solid rgb(var(--white-rgb) / 0.25);
+  background: rgb(var(--white-rgb) / 0.03);
+  color: var(--color-white);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.banner-control--text {
+  width: auto;
+  padding: 0 18px;
+}
+
+.banner-control--primary {
+  border: 0;
+  background: var(--color-red);
+}
+
+@keyframes banner-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes banner-scan {
+  0% {
+    transform: translateY(-120px);
+  }
+  100% {
+    transform: translateY(760px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner-spin,
+  .banner-spin-rev,
+  .banner-scan {
+    animation: none;
+  }
+}

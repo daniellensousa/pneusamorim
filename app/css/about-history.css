@@ -1,0 +1,213 @@
+/* Quem somos - "Nossa história" */
+.history {
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
+}
+
+.history-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 64px;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 64px 1rem;
+}
+
+@media (min-width: 1024px) {
+  .history-inner {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 80px;
+    padding: 112px 80px;
+  }
+}
+
+.history-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.history-text p {
+  margin: 0;
+  font-family: var(--font-barlow), sans-serif;
+  font-size: 1.1875rem;
+  line-height: 1.7;
+  color: var(--color-text-dark-body);
+}
+
+.history-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-red-deep);
+}
+
+.history-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-red);
+  box-shadow: 0 0 12px var(--color-red);
+}
+
+.history-title {
+  margin: 0;
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1024px) {
+  .history-title {
+    font-size: 3.375rem;
+  }
+}
+
+/* Foto sobreposta a um bloco escuro, com selo "40+ anos" */
+.history-visual {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .history-visual {
+    height: 500px;
+  }
+}
+
+.history-backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 77%;
+  height: 84%;
+  background-color: var(--color-surface-2);
+  border: 1px solid rgb(var(--ink-rgb) / 0.09);
+}
+
+.history-backdrop.grid-bg {
+  background-image:
+    linear-gradient(rgb(var(--white-rgb) / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--white-rgb) / 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.history-photo-wrap {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 70%;
+  height: 66%;
+}
+
+@media (min-width: 640px) {
+  .history-photo-wrap {
+    width: 80%;
+    height: 72%;
+  }
+}
+
+.history-photo {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 18px) 0,
+    100% 18px,
+    100% 100%,
+    18px 100%,
+    0 calc(100% - 18px)
+  );
+}
+
+.history-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.history-corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 0 solid var(--color-red);
+}
+
+.history-corner--tl {
+  top: -8px;
+  left: -8px;
+  border-width: 2px 0 0 2px;
+}
+
+.history-corner--tr {
+  top: -8px;
+  right: -8px;
+  border-width: 2px 2px 0 0;
+}
+
+.history-corner--bl {
+  bottom: -8px;
+  left: -8px;
+  border-width: 0 0 2px 2px;
+}
+
+.history-corner--br {
+  bottom: -8px;
+  right: -8px;
+  border-width: 0 2px 2px 0;
+}
+
+.history-badge {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.history-badge-label {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.2em;
+  color: var(--color-text-dim);
+}
+
+.history-badge-number {
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--color-white);
+}
+
+@media (min-width: 640px) {
+  .history-badge-number {
+    font-size: 5.5rem;
+  }
+}
+
+.history-badge-plus {
+  color: var(--color-red);
+}
+
+.history-badge-unit {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  color: var(--color-red-deep);
+}

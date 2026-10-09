@@ -1,0 +1,149 @@
+/* Quem somos - "Nossa trajetória" */
+.timeline {
+  background-color: var(--color-bg-deep);
+  border-top: 1px solid rgb(var(--white-rgb) / 0.08);
+  border-bottom: 1px solid rgb(var(--white-rgb) / 0.08);
+  color: var(--color-white);
+}
+
+.timeline.grid-bg {
+  background-image:
+    linear-gradient(rgb(var(--white-rgb) / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--white-rgb) / 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.timeline-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 64px 1rem;
+}
+
+@media (min-width: 1024px) {
+  .timeline-inner {
+    padding: 104px 80px;
+  }
+}
+
+.timeline-head {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.timeline-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-red-light);
+}
+
+.timeline-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-red);
+  box-shadow: 0 0 12px var(--color-red);
+}
+
+.timeline-title {
+  margin: 0;
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1024px) {
+  .timeline-title {
+    font-size: 3.375rem;
+  }
+}
+
+.timeline-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .timeline-track {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+/* Linha horizontal só no desktop */
+.timeline-line,
+.timeline-line-fill {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .timeline-line,
+  .timeline-line-fill {
+    display: block;
+    position: absolute;
+    left: 0;
+  }
+
+  .timeline-line {
+    right: 0;
+    top: 7px;
+    height: 1px;
+    background: rgb(var(--white-rgb) / 0.18);
+  }
+
+  .timeline-line-fill {
+    width: 75%;
+    top: 6px;
+    height: 3px;
+    background: var(--color-red);
+    box-shadow: 0 0 14px var(--color-red);
+  }
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.timeline-marker {
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  background: var(--color-bg);
+  border: 2px solid var(--color-red);
+  box-shadow: 0 0 12px var(--color-red);
+  transform: rotate(45deg);
+}
+
+.timeline-year {
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 3.75rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.timeline-text {
+  margin: 0;
+  font-family: var(--font-barlow), sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-text-caption);
+}

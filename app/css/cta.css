@@ -1,0 +1,130 @@
+/* Chamada final - "Hora de trocar os pneus?" */
+.cta {
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  background: var(--color-red);
+  color: var(--color-white);
+}
+
+.cta-dots {
+  position: absolute;
+  inset: 0;
+  opacity: 0.6;
+  background-image: radial-gradient(rgb(var(--white-rgb) / 0.1) 1px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+.cta-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 3rem 1rem;
+}
+
+@media (min-width: 1024px) {
+  .cta-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 3rem 80px;
+  }
+}
+
+.cta-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cta-eyebrow {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-red-tint-strong);
+}
+
+.cta-title {
+  margin: 0;
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1024px) {
+  .cta-title {
+    font-size: 3.5rem;
+  }
+}
+
+.cta-description {
+  margin: 0;
+  font-family: var(--font-barlow), sans-serif;
+  font-size: 1.25rem;
+  color: var(--color-red-tint-soft);
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (min-width: 1024px) {
+  .cta-actions {
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+  }
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 60px;
+  box-sizing: border-box;
+  padding: 0 30px;
+  font-family: var(--font-chakra-petch), sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.15s ease;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
+}
+
+.cta-btn:hover {
+  opacity: 0.88;
+}
+
+.cta-btn--dark {
+  background: var(--color-bg);
+  color: var(--color-white);
+}
+
+.cta-btn--light {
+  background: var(--color-white);
+  color: var(--color-bg-deep);
+}
